@@ -1,8 +1,17 @@
-function firstWord(s) {
-  // your code here
+const readlineSync = require('readline-sync');
+
+function firstWord(str) {
+  if (str.trim() === '' || !str.includes(' ')) {
+    return str;
+  }
+  return str.trim().split(' ')[0];
 }
 
-// Do not change the code below
+// Get user input using readlineSync
+const userInput = readlineSync.question('Enter a string: ');
 
-const s = prompt("Enter String:");
-alert(firstWord(s));
+// Call the firstWord function with user input
+const result = firstWord(userInput);
+
+// Display the result
+console.log('Result:', result);

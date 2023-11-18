@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Word Example</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+
+<script>
+  function firstWord(str) {
+    if (str.trim() === '' || !str.includes(' ')) {
+      return str;
+    }
+    return str.trim().split(' ')[0];
+  }
+
+  // Get user input using prompt
+  var userInput = prompt("Enter a string:");
+  
+  // Call the firstWord function with user input
+  var result = firstWord(userInput);
+  
+  // Display the result
+  alert("Result: " + result);
 </script>
 
 </body>
-
 </html>

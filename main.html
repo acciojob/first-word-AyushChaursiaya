@@ -9,20 +9,25 @@
 
 <script>
   function firstWord(str) {
-    if (str.trim() === '' || !str.includes(' ')) {
-      return str;
-    }
-    return str.trim().split(' ')[0];
+  // Check if the input string is empty or does not contain any space
+  if (str === '' || !str.includes(' ')) {
+    return str;
   }
 
-  // Get user input using prompt
-  var userInput = prompt("Enter a string:");
-  
-  // Call the firstWord function with user input
-  var result = firstWord(userInput);
-  
-  // Display the result
-  alert("Result: " + result);
+  // Extract the first word by finding the index of the first space
+  const firstSpaceIndex = str.indexOf(' ');
+  const firstWord = str.slice(0, firstSpaceIndex);
+
+  return firstWord;
+}
+
+// Examples
+console.log(firstWord('see and stop'));    // Output: 'see'
+console.log(firstWord(' Hello World!'));    // Output: 'Hello'
+console.log(firstWord('12345'));             // Output: '12345'
+console.log(firstWord(''));                  // Output: ''
+
+
 </script>
 
 </body>
